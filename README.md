@@ -51,8 +51,9 @@ your model you can use this as shown below:
 
 ```php
 use kartik\validators\EmailValidator;
+use yii\db\ActiveRecord;
 
-class EmailModel extends yii\base\Model {
+class EmailModel extends ActiveRecord {
     /**
      * @return array the validation rules.
      */
@@ -89,8 +90,9 @@ your model you can use this as shown below:
 
 ```php
 use kartik\validators\PhoneValidator;
+use yii\db\ActiveRecord;
 
-class ContactModel extends yii\base\Model {
+class ContactModel extends ActiveRecord {
     /**
      * @return array the validation rules.
      */
