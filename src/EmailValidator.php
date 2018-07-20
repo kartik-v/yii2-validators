@@ -64,6 +64,15 @@ class EmailValidator extends YiiEmailValidator
     {
         $isMsgSet = isset($this->message);
         parent::init();
+        $this->initSettings($isMsgSet);
+    }
+
+    /**
+     * Initializes settings
+     * @param boolean $isMsgSet whether [[message]] property is set
+     */
+    protected function initSettings($isMsgSet = false)
+    {
         if (!$this->multiple) {
             return;
         }

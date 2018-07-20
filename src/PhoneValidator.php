@@ -59,7 +59,7 @@ class PhoneValidator extends Validator
     public $message;
 
     /**
-     * @var string the message to show if country value is empty and [[countryRequired]] is `true`. 
+     * @var string the message to show if country value is empty and [[countryRequired]] is `true`.
      */
     public $countryRequiredMessage;
 
