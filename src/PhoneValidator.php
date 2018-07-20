@@ -106,12 +106,10 @@ class PhoneValidator extends Validator
         $phoneUtil = PhoneNumberUtil::getInstance();
         try {
             $numberProto = $phoneUtil->parse($model->$attribute, $country);
-            if ($phoneUtil->isValidNumber($numberProto)) {
-                if ($this->applyFormat) {
-                    $model->$attribute = $phoneUtil->format($numberProto, $this->format);
-                }
-            } else {
+            if (!$phoneUtil->isValidNumber($numberProto)) {
                 $this->addError($model, $attribute, $this->message, ['{value}' => $model->$attribute]);
+            } elseif ($this->applyFormat) {
+                $model->$attribute = $phoneUtil->format($numberProto, $this->format);
             }
         } catch (NumberParseException $e) {
             $this->addError($model, $attribute, $this->parseExceptionMessage, ['{value}' => $model->$attribute]);
