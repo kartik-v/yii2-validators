@@ -17,7 +17,10 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    '"{value}" does not seem to be a valid phone number.' => '',
     '"{value}" is not a valid email address.' => '',
     'A maximum of {value, number} {value, plural, one{email is} other{emails are}} allowed.' => '',
     'At least {value, number} {value, plural, one{email is} other{emails are}} required.' => '',
+    'Country is required for phone validation.' => '',
+    'Unexpected or unrecognized phone number format.' => '',
 ];

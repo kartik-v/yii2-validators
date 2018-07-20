@@ -20,7 +20,8 @@ use kartik\base\TranslationTrait;
 class EmailValidator extends YiiEmailValidator
 {
     use TranslationTrait;
-
+    use ValidatorTrait;
+    
     /**
      * @var boolean whether multiple email addresses are supported (separated by the [[delimiter]])
      */
@@ -30,13 +31,13 @@ class EmailValidator extends YiiEmailValidator
      */
     public $delimiter = ',';
     /**
-     * @var int minimum number of emails required (applicable only when [[multiple]] is `true`). Setting this 
-     * to `0` or `NULL` will mean no minimum limit.
+     * @var int minimum number of emails required (applicable only when [[multiple]] is `true`). Setting this to `0` or
+     * `NULL` will mean no minimum limit.
      */
     public $min = 0;
     /**
-     * @var int maximum number of emails required (applicable only when [[multiple]] is `true`). Setting this 
-     * to `0` or `NULL` will mean no maximum limit.
+     * @var int maximum number of emails required (applicable only when [[multiple]] is `true`). Setting this to `0` or
+     * `NULL` will mean no maximum limit.
      */
     public $max = 0;
     /**
@@ -57,18 +58,6 @@ class EmailValidator extends YiiEmailValidator
     protected $_msgCat = 'kvvalidator';
 
     /**
-     * Sets validation rule message
-     * @param string $type
-     * @param string $msg
-     */
-    protected function setMsg($type, $msg)
-    {
-        if (!isset($this->$type)) {
-            $this->$type = $msg;
-        }
-    }
-
-    /**
      * @inheritdoc
      */
     public function init()
@@ -80,11 +69,11 @@ class EmailValidator extends YiiEmailValidator
         }
         $this->initI18N();
         $this->setMsg(
-            'minThresholdMessage', 
+            'minThresholdMessage',
             Yii::t('kvvalidator', 'At least {value, number} {value, plural, one{email is} other{emails are}} required.')
         );
         $this->setMsg(
-            'maxThresholdMessage', 
+            'maxThresholdMessage',
             Yii::t('kvvalidator', 'A maximum of {value, number} {value, plural, one{email is} other{emails are}} allowed.')
         );
         if (!$isMsgSet) {
@@ -148,5 +137,4 @@ class EmailValidator extends YiiEmailValidator
         ]);
         return 'KvValidator.email(value, messages, ' . Json::htmlEncode($options) . ');';
     }
-
 }
