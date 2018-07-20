@@ -10,9 +10,14 @@ yii2-validators
 
 This extension adds new model validator components for Yii2 frameworkor and/or enhances existing Yii2 model validators. 
 
-The `EmailValidator` extends the [yii\validators\EmailValidator](https://www.yiiframework.com/doc/api/2.0/yii-validators-emailvalidator) component to support multiple email inputs for Yii2 framework. In addition this validator allows setting the `multiple` property and setting the `min` and `max` number of email addresses allowed. This is useful for adding validation rules to your attributes in the model and also adds enhanced client validation support for ActiveForm inputs at runtime via Javascript.
+The `EmailValidator` extends the [yii\validators\EmailValidator](https://www.yiiframework.com/doc/api/2.0/yii-validators-emailvalidator)
+component to support multiple email inputs for Yii2 framework. In addition this validator allows setting the `multiple` property and
+setting the `min` and `max` number of email addresses allowed. This is useful for adding validation rules to your attributes
+in the model and also adds enhanced client validation support for ActiveForm inputs at runtime via Javascript.
 
-The `PhoneValidator` extends the [yii\validators\Validator](https://www.yiiframework.com/doc/api/2.0/yii-validators-validator) component and uses the [Google's libphonenumber library for php](https://github.com/giggsey/libphonenumber-for-php) for parsing phone numbers.
+The `PhoneValidator` extends the [yii\validators\Validator](https://www.yiiframework.com/doc/api/2.0/yii-validators-validator) component
+using [libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) based on Google's
+[libphonenumber](https://github.com/googlei18n/libphonenumber) library.
 
 ## Demo
 You can see detailed [documentation and demos](http://demos.krajee.com/validators) on usage of this extension.
@@ -78,8 +83,8 @@ ActiveForm::end();
 ### PhoneValidator
 
 This class extends the `yii\validators\EmailValidator` class to validate phone numbers using
-[libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) based on
-[libphonenumber](https://github.com/googlei18n/libphonenumber). For example in
+[libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) based on Google's
+[libphonenumber](https://github.com/googlei18n/libphonenumber) library. For example in
 your model you can use this as shown below:
 
 ```php
