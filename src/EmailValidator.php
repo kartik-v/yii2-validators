@@ -144,6 +144,6 @@ class EmailValidator extends YiiEmailValidator
             'minThresholdMessage' => $this->minThresholdMessage,
             'maxThresholdMessage' => $this->maxThresholdMessage,
         ]);
-        return 'KvValidator.email(value, messages, ' . Json::htmlEncode($options) . ');';
+        return 'EmailValidator.validate(value, messages, ' . Json::htmlEncode($options) . ');';
     }
 }

@@ -12,7 +12,7 @@ use yii\base\BootstrapInterface;
 use yii\validators\Validator;
 
 /**
- * Bootstrap for add validators to `yii\validators\Validator::$builtInValidators`
+ * Bootstrap for additional validators to `yii\validators\Validator::$builtInValidators`
  * for easier use and friendly syntax.
  */
 class Bootstrap implements BootstrapInterface

@@ -4,17 +4,17 @@
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
  * @version   1.0.0
  *
- * Yii2 client validation library for `kartik-v/yii2-validators`
+ * Yii2 email client validation library for `kartik-v/yii2-validators`
  * 
  * Author: Kartik Visweswaran
  * Copyright: 2014 - 2018, Kartik Visweswaran, Krajee.com
  * For more JQuery plugins visit http://plugins.krajee.com
  * For more Yii related demos visit http://demos.krajee.com
  */
-var KvValidator;
+var EmailValidator;
 (function ($) {
-    KvValidator = {
-        email: function (value, messages, options) {
+    EmailValidator = {
+        validate: function (value, messages, options) {
             var delimiter = options.delimiter || ',', emails = value.split(delimiter), 
                 count = emails.length, i, pub = yii.validation.pub, email;
             if (count === 0) {
