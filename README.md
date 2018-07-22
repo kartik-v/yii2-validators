@@ -50,7 +50,6 @@ This class extends the `yii\validators\EmailValidator` class to offer multiple e
 your model you can use this as shown below:
 
 ```php
-use kartik\validators\EmailValidator;
 use yii\db\ActiveRecord;
 
 class EmailModel extends ActiveRecord {
@@ -60,7 +59,7 @@ class EmailModel extends ActiveRecord {
     public function rules()
     {
         return [
-            [['to', 'cc', 'bcc'], EmailValidator::class, 'allowName' => true, 'enableIDN' => true, 'max' => 5],
+            [['to', 'cc', 'bcc'], 'k-email', 'allowName' => true, 'enableIDN' => true, 'max' => 5],
         ];
     }
 }
@@ -83,13 +82,12 @@ ActiveForm::end();
 
 ### PhoneValidator
 
-This class extends the `yii\validators\EmailValidator` class to validate phone numbers using
+This class extends the `yii\validators\Validator` class to validate phone numbers using
 [libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) based on Google's
 [libphonenumber](https://github.com/googlei18n/libphonenumber) library. For example in
 your model you can use this as shown below:
 
 ```php
-use kartik\validators\PhoneValidator;
 use yii\db\ActiveRecord;
 
 class ContactModel extends ActiveRecord {
@@ -99,7 +97,7 @@ class ContactModel extends ActiveRecord {
     public function rules()
     {
         return [
-            [['phone'], PhoneValidator::class, 'countryAttribute' => 'country'],
+            [['phone'], 'k-phone', 'countryAttribute' => 'country'],
         ];
     }
 }

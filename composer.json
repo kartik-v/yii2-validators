@@ -31,6 +31,7 @@
     }
   },
   "extra": {
+    "bootstrap": "kartik\\validators\\Bootstrap",
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
