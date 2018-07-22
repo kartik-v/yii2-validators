@@ -5,5 +5,5 @@ Change Log: `yii2-validators`
 
 **Date:** _under development_
 
+- (enh #1, #2): Added `kartik\validators\Bootstrap` (vuongxuongminh)
 - Initial release
-- Enh #1: Added `kartik\validators\Bootstrap` (vuongxuongminh)

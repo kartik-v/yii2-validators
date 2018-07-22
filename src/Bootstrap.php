@@ -17,7 +17,6 @@ use yii\validators\Validator;
  */
 class Bootstrap implements BootstrapInterface
 {
-
     /**
      * @inheritdoc
      */
@@ -28,5 +27,4 @@ class Bootstrap implements BootstrapInterface
             'k-phone' => 'kartik\validators\PhoneValidator'
         ]);
     }
-
 }
