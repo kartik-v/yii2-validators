@@ -19,6 +19,10 @@ The `PhoneValidator` extends the [yii\validators\Validator](https://www.yiiframe
 using [libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) based on Google's
 [libphonenumber](https://github.com/googlei18n/libphonenumber) library.
 
+The `CardValidator` extends the [yii\validators\Validator](https://www.yiiframework.com/doc/api/2.0/yii-validators-validator) component.
+It validates standard debit and credit card number inputs using Luhn's checksum validation. It also helps auto detect the card types and
+additionally validating the card holder name, expiry date and CVV entered.
+
 ## Demo
 You can see detailed [documentation and demos](http://demos.krajee.com/validators) on usage of this extension.
 
@@ -46,8 +50,8 @@ to the ```require``` section of your `composer.json` file.
 
 ### EmailValidator
 
-This class extends the `yii\validators\EmailValidator` class to offer multiple email validation support. For example in 
-your model you can use this as shown below:
+This class extends the `yii\validators\EmailValidator` class to offer multiple email validation support. The `EmailValidator` class
+can be easily used via the alias `k-email` in your model validation rules. For example in your model you can use this as shown below:
 
 ```php
 use yii\db\ActiveRecord;
@@ -84,8 +88,9 @@ ActiveForm::end();
 
 This class extends the `yii\validators\Validator` class to validate phone numbers using
 [libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) based on Google's
-[libphonenumber](https://github.com/googlei18n/libphonenumber) library. For example in
-your model you can use this as shown below:
+[libphonenumber](https://github.com/googlei18n/libphonenumber) library. The `PhoneValidator` class
+can be easily used via the alias `k-phone` in your model validation rules. For example in your 
+model you can use this as shown below:
 
 ```php
 use yii\db\ActiveRecord;
@@ -97,11 +102,45 @@ class ContactModel extends ActiveRecord {
     public function rules()
     {
         return [
-            [['phone'], 'k-phone', 'countryAttribute' => 'country'],
+            [['phone1'], 'k-phone', 'countryValue' => 'US'],
+            [['phone2'], 'k-phone', 'countryAttribute' => 'country', 'applyFormat' => false],
         ];
     }
 }
 ```
+
+### CardValidator
+
+The `CardValidator` extends the [yii\validators\Validator](https://www.yiiframework.com/doc/api/2.0/yii-validators-validator) component.
+It validates standard debit and credit card number inputs using Luhn's checksum validation. It also helps auto detect the card types and
+additionally validating the card holder name, expiry date and CVV entered. The `CardValidator` class
+can be easily used via the alias `k-card` in your model validation rules. For example in your 
+model you can use this as shown below:
+
+```php
+use yii\db\ActiveRecord;
+
+class PaymentModel extends ActiveRecord {
+    /**
+     * @return array the validation rules.
+     */
+    public function rules()
+    {
+        return [
+            [
+                ['card_number'], 
+                'k-card', 
+                'typeAttribute' => 'card_type', 
+                'holderAttribute' => 'holderName',
+                'expiryYearAttribute' => 'expiryYear',
+                'expiryMonthAttribute' => 'expiryMonth',
+                'cvvAttribute' => 'cvv',
+            ],
+        ];
+    }
+}
+```
+
 ## License
 
 **yii2-validators** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.

@@ -24,7 +24,8 @@ class Bootstrap implements BootstrapInterface
     {
         Validator::$builtInValidators = array_merge(Validator::$builtInValidators, [
             'k-email' => 'kartik\validators\EmailValidator',
-            'k-phone' => 'kartik\validators\PhoneValidator'
+            'k-phone' => 'kartik\validators\PhoneValidator',
+            'k-card' => 'kartik\validators\CardValidator',
         ]);
     }
 }

@@ -69,6 +69,11 @@ class PhoneValidator extends Validator
     public $parseExceptionMessage;
 
     /**
+     * @var string the translation message file category
+     */
+    protected $_msgCat = 'kvvalidator';
+
+    /**
      * @inheritdoc
      */
     public function init()

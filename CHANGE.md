@@ -5,5 +5,7 @@ Change Log: `yii2-validators`
 
 **Date:** _under development_
 
+- Add `CardValidator`
 - (enh #1, #2): Added `kartik\validators\Bootstrap` (vuongxuongminh)
-- Initial release
+- Add `PhoneValidator`
+- Add `EmailValidator`
