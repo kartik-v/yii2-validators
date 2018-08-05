@@ -17,9 +17,9 @@ class EmailValidatorAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-	public $depends = [
-		'yii\validators\ValidationAsset'
-	];
+    public $depends = [
+        'yii\validators\ValidationAsset'
+    ];
 
     /**
      * @inheritdoc
@@ -28,6 +28,6 @@ class EmailValidatorAsset extends AssetBundle
     {
         $this->setSourcePath(__DIR__ . '/assets');
         $this->setupAssets('js', ['js/email-validator']);
-		parent::init();
-	}
+        parent::init();
+    }
 }
