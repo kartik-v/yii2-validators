@@ -13,10 +13,11 @@
  */
 var EmailValidator;
 (function ($) {
+    "use strict";
     EmailValidator = {
         validate: function (value, messages, options) {
-            var delimiter = options.delimiter || ',', emails = value.split(delimiter), 
-                count = emails.length, i, pub = yii.validation.pub, email;
+            var delimiter = options.delimiter || ',', emails = value.split(delimiter),
+                count = emails.length, i, pub = yii.validation.pub, email; // jshint ignore:line
             if (count === 0) {
                 return;
             }
@@ -28,7 +29,7 @@ var EmailValidator;
             }
             for (i = 0; i < count; i++) {
                 email = $.trim(emails[i]);
-                yii.validation.email(email, messages, options);
+                yii.validation.email(email, messages, options); // jshint ignore:line
             }
         }
     };

@@ -52,17 +52,16 @@ class EmailValidator extends YiiEmailValidator
      * @inheritdoc
      */
     public $message;
-    /**
-     * @var string the translation message file category
-     */
-    protected $_msgCat = 'kvvalidator';
 
     /**
      * @inheritdoc
+     * @throws \ReflectionException
+     * @throws \yii\base\InvalidConfigException
      */
     public function init()
     {
         $isMsgSet = isset($this->message);
+        $this->_msgCat = 'kvvalidator';
         parent::init();
         $this->initSettings($isMsgSet);
     }
@@ -70,6 +69,7 @@ class EmailValidator extends YiiEmailValidator
     /**
      * Initializes settings
      * @param boolean $isMsgSet whether [[message]] property is set
+     * @throws \ReflectionException
      */
     protected function initSettings($isMsgSet = false)
     {
@@ -92,6 +92,7 @@ class EmailValidator extends YiiEmailValidator
 
     /**
      * @inheritdoc
+     * @throws \yii\base\NotSupportedException
      */
     public function validateAttribute($model, $attribute)
     {

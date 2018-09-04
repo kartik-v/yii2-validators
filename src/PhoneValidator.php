@@ -1,10 +1,11 @@
 <?php
 /**
-* @package   yii2-validators
-* @author    Kartik Visweswaran <kartikv2@gmail.com>
-* @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
-* @version   1.0.0
-*/
+ * @package   yii2-validators
+ * @author    Kartik Visweswaran <kartikv2@gmail.com>
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
+ * @version   1.0.0
+ */
+
 namespace kartik\validators;
 
 use libphonenumber\NumberParseException;
@@ -12,7 +13,6 @@ use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 use Yii;
 use yii\validators\Validator;
-use yii\base\Model;
 use kartik\base\TranslationTrait;
 
 /**
@@ -69,28 +69,27 @@ class PhoneValidator extends Validator
     public $parseExceptionMessage;
 
     /**
-     * @var string the translation message file category
-     */
-    protected $_msgCat = 'kvvalidator';
-
-    /**
      * @inheritdoc
+     * @throws \ReflectionException
      */
     public function init()
     {
+        $this->_msgCat = 'kvvalidator';
         parent::init();
         $this->initSettings();
     }
 
     /**
      * Initializes the validator settings
+     * @throws \ReflectionException
      */
     protected function initSettings()
     {
         $this->initI18N();
         $this->setMsg('message', Yii::t('kvvalidator', '"{value}" does not seem to be a valid phone number.'));
         $this->setMsg('countryRequiredMessage', Yii::t('kvvalidator', 'Country is required for phone validation.'));
-        $this->setMsg('parseExceptionMessage', Yii::t('kvvalidator', 'Unexpected or unrecognized phone number format.'));
+        $this->setMsg('parseExceptionMessage',
+            Yii::t('kvvalidator', 'Unexpected or unrecognized phone number format.'));
     }
 
     /**

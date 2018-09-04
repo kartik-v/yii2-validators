@@ -270,21 +270,19 @@ class CardValidator extends Validator
     protected $_cards = [];
 
     /**
-     * @var string the translation message file category
-     */
-    protected $_msgCat = 'kvvalidator';
-
-    /**
      * @inheritdoc
+     * @throws \ReflectionException
      */
     public function init()
     {
+        $this->_msgCat = 'kvvalidator';
         parent::init();
         $this->initSettings();
     }
 
     /**
      * Initialize settings
+     * @throws \ReflectionException
      */
     protected function initSettings()
     {

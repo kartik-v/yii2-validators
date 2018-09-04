@@ -18,7 +18,6 @@ use yii\base\Model;
  * @author  Kartik Visweswaran <kartikv2@gmail.com>
  * @since   1.0
  */
-
 trait ValidatorTrait
 {
     /**
