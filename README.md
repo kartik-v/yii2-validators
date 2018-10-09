@@ -143,4 +143,4 @@ class PaymentModel extends ActiveRecord {
 
 ## License
 
-**yii2-validators** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-validators** is released under the BSD-3-Clause License. See the bundled `LICENSE.md` for details.

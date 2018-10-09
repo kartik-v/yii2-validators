@@ -3,8 +3,9 @@ Change Log: `yii2-validators`
 
 ## Version 1.0.1
 
-**Date:** _under development_
+**Date:** 09-Oct-2018
 
+- Update composer dependencies
 - (kartik-v/yii2-krajee-base#94): Refactor code and consolidate / optimize properties within traits.
 
 ## Version 1.0.0
