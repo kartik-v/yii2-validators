@@ -3,7 +3,7 @@
  * @package   yii2-validators
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
- * @version   1.0.0
+ * @version   1.0.2
  */
 namespace kartik\validators;
 
@@ -115,7 +115,7 @@ class EmailValidator extends YiiEmailValidator
         }
         foreach ($emails as $email) {
             $email = trim($email);
-            if (!empty($email) && !$this->validateValue($email)) {
+            if (!empty($email) && !empty($this->validateValue($email))) {
                 $this->addError($model, $attribute, $this->message, ['{value}' => $email]);
                 return;
             }

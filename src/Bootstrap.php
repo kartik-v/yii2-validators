@@ -3,7 +3,7 @@
  * @package   yii2-validators
  * @author    Vuong Minh <vuongxuongminh@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
- * @version   1.0.0
+ * @version   1.0.2
  */
 
 namespace kartik\validators;
