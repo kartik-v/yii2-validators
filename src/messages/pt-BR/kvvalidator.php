@@ -17,15 +17,15 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    '"{number}" is not a valid card number' => '',
-    '"{value}" does not seem to be a valid phone number.' => '',
+    '"{number}" is not a valid card number' => '"{number}" não é um número de cartão válido.',
+    '"{value}" does not seem to be a valid phone number.' => '"{value}" não parece ser um número de telefone válido.',
     '"{value}" is not a valid email address.' => '',
-    'A maximum of {value, number} {value, plural, one{email is} other{emails are}} allowed.' => '',
-    'At least {value, number} {value, plural, one{email is} other{emails are}} required.' => '',
-    'Country is required for phone validation.' => '',
-    'Invalid CVV "{cvv}"' => '',
-    'Invalid expiry month/year "{expiry}"' => '',
-    'Invalid holder name "{holder}"' => '',
+    'A maximum of {value, number} {value, plural, one{email is} other{emails are}} allowed.' => 'Um máximo de {value, number} {value, plural, um{email is} outros{emails are}} permitido.',
+    'At least {value, number} {value, plural, one{email is} other{emails are}} required.' => 'Pelo menos {value, number} {value, plural, um{email is} outros{emails are}} requeridos.',
+    'Country is required for phone validation.' => 'Páis é requerido para validação de telefone.',
+    'Invalid CVV "{cvv}"' => 'CVV Inválido',
+    'Invalid expiry month/year "{expiry}"' => 'Mês/Ano de expiração é inválido.',
+    'Invalid holder name "{holder}"' => 'Nome do portador do cartão inválido.',
     'Unexpected or unrecognized phone number format.' => '',
-    'Unsupported card number "{number}"' => '',
+    'Unsupported card number "{number}"' => 'Número de cartão não suportado.',
 ];
