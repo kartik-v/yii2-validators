@@ -23,7 +23,7 @@
   ],
   "require": {
     "kartik-v/yii2-krajee-base": ">=2.0.0",
-    "giggsey/libphonenumber-for-php": "~7.0"
+    "giggsey/libphonenumber-for-php": "^8"
   },
   "autoload": {
     "psr-4": {
