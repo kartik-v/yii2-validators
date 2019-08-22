@@ -3,7 +3,7 @@
  * @package   yii2-validators
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2019
- * @version   1.0.2
+ * @version   1.0.3
  */
 
 namespace kartik\validators;
@@ -51,7 +51,7 @@ class JsonValidator extends Validator
         $out = $this->validateJson($value);
         if (isset($out['data'])) {
             if ($this->prettify) {
-                $this->$attribute = Json::encode($out['data'], JSON_PRETTY_PRINT);
+                $model->$attribute = Json::encode($out['data'], JSON_PRETTY_PRINT);
             }
         } else {
             $this->addError($model, $attribute, $this->message, ['exception' => $out['message']]);

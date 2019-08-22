@@ -1,6 +1,12 @@
 Change Log: `yii2-validators`
 =============================
 
+## Version 1.0.3
+
+**Date:** 22-Aug-2019
+
+- Correct `JsonValidator`.
+
 ## Version 1.0.2
 
 **Date:** 22-Aug-2019
