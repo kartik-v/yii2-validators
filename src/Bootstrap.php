@@ -2,7 +2,7 @@
 /**
  * @package   yii2-validators
  * @author    Vuong Minh <vuongxuongminh@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2019
  * @version   1.0.2
  */
 
@@ -26,6 +26,7 @@ class Bootstrap implements BootstrapInterface
             'k-email' => 'kartik\validators\EmailValidator',
             'k-phone' => 'kartik\validators\PhoneValidator',
             'k-card' => 'kartik\validators\CardValidator',
+            'k-json' => 'kartik\validators\JsonValidator',
         ]);
     }
 }

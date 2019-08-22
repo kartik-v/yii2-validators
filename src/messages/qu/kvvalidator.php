@@ -24,6 +24,7 @@ return [
     'At least {value, number} {value, plural, one{email is} other{emails are}} required.' => '',
     'Country is required for phone validation.' => '',
     'Invalid CVV "{cvv}"' => '',
+    'Invalid JSON input for "{attribute}". {exception}' => '',
     'Invalid expiry month/year "{expiry}"' => '',
     'Invalid holder name "{holder}"' => '',
     'Unexpected or unrecognized phone number format.' => '',

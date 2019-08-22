@@ -23,6 +23,10 @@ The `CardValidator` extends the [yii\validators\Validator](https://www.yiiframew
 It validates standard debit and credit card number inputs using Luhn's checksum validation. It also helps auto detect the card types and
 additionally validating the card holder name, expiry date and CVV entered.
 
+The `JsonValidator` extends the [yii\validators\Validator](https://www.yiiframework.com/doc/api/2.0/yii-validators-validator) component.
+It validates JSON input in text area fields. The validator also helps to overwrite the JSON input as a pretty format via `prettify` setting.
+It includes both server and client validations.
+
 ## Demo
 You can see detailed [documentation and demos](http://demos.krajee.com/validators) on usage of this extension.
 
@@ -135,6 +139,33 @@ class PaymentModel extends ActiveRecord {
                 'expiryYearAttribute' => 'expiryYear',
                 'expiryMonthAttribute' => 'expiryMonth',
                 'cvvAttribute' => 'cvv',
+            ],
+        ];
+    }
+}
+```
+
+### JsonValidator
+
+The `JsonValidator` extends the [yii\validators\Validator](https://www.yiiframework.com/doc/api/2.0/yii-validators-validator) component.
+It validates JSON input in text area fields. The validator also helps to overwrite the JSON input as a pretty format via `prettify` setting.
+It includes both server and client validations. The `JsonValidator` class can be easily used via the alias `k-json` in your model validation 
+rules. For example in your model you can use this as shown below:
+
+```php
+use yii\db\ActiveRecord;
+
+class ProductModel extends ActiveRecord {
+    /**
+     * @return array the validation rules.
+     */
+    public function rules()
+    {
+        return [
+            [
+                ['products_list_json'], 
+                'k-json', 
+                'prettify' => true, // set this to false if you do not wish to prettify the json input
             ],
         ];
     }

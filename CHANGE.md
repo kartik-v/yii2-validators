@@ -3,8 +3,11 @@ Change Log: `yii2-validators`
 
 ## Version 1.0.2
 
-**Date:** 12-Nov-2018
+**Date:** 22-Aug-2019
 
+- (enh #7): Implement `JsonValidator`.
+- (enh #5, #6): Update `libphonenumber` version to latest release .
+- (enh #4): Update Portugese Brazilian Translations .
 - (bug #3): Correct EmailValidator validate value.
 - Update README.
 

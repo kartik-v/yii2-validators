@@ -8,11 +8,13 @@
 namespace kartik\validators;
 
 use kartik\base\AssetBundle;
-
 /**
- * Email Validation asset bundle.
+ * Asset bundle for JsonValidator
+ *
+ * @author Kartik Visweswaran <kartikv2@gmail.com>
+ * @since 1.0
  */
-class EmailValidatorAsset extends AssetBundle
+class JsonValidatorAsset extends AssetBundle
 {
     /**
      * @inheritdoc
@@ -20,14 +22,14 @@ class EmailValidatorAsset extends AssetBundle
     public $depends = [
         'yii\validators\ValidationAsset'
     ];
-
+    
     /**
      * @inheritdoc
      */
     public function init()
     {
         $this->setSourcePath(__DIR__ . '/assets');
-        $this->setupAssets('js', ['js/email-validator']);
+        $this->setupAssets('js', ['js/json-validator']);
         parent::init();
     }
 }
