@@ -13,6 +13,7 @@ use yii\base\InvalidValueException;
 use yii\validators\Validator;
 use yii\base\Model;
 use kartik\base\TranslationTrait;
+use yii\helpers\Json;
 
 /**
  * CardValidator validates standard debit and credit card number inputs using Luhn's checksum validation. It also
@@ -46,6 +47,7 @@ class CardValidator extends Validator
     const SWITCH_CARD = 'Switch Card';
     const LASER = 'Laser';
     const UNIONPAY = 'Union Pay';
+    const MIR = 'mir';
 
     /**
      * @var array holds the configurations for each of the credit / debit cards including the card lengths and regex
@@ -59,7 +61,7 @@ class CardValidator extends Validator
             'luhn' => true,
         ],
         self::MAESTRO => [
-            'pattern' => '/^(5018|5020|5038|6304|6759|6761|6763)[0-9]{8,15}$/',
+            'pattern' => ' /^(5[06-9]|6[37])\d*$/',
             'cvvLength' => [3],
             'luhn' => true,
         ],
@@ -149,6 +151,11 @@ class CardValidator extends Validator
             'cvvLength' => [3],
             'luhn' => false,
         ],
+        self::MIR => [
+            'pattern' => '/^220[0-4][0-9]{12}$/',
+            'cvvLength' => [3],
+            'luhn' => true,
+        ]
     ];
 
     /**
@@ -324,6 +331,24 @@ class CardValidator extends Validator
                 $this->addError($model, $attribute, $result[0], $result[1]);
             }
         }
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function clientValidateAttribute($model, $attribute, $view)
+    {
+        /**
+         * @var Model $model
+         */
+        CardValidatorAsset::register($view);
+
+        $options = array_replace_recursive($this->getClientOptions($model, $attribute), [
+    	    'cards' => $this->_cards,
+            'invalidMessage' => $this->message,
+            'invalidTypeMessage' => $this->invalidTypeMessage,
+        ]);
+        return 'CardValidator.validate(value, messages, ' . Json::encode($options) . ');';
     }
 
     /**
