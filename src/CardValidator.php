@@ -47,6 +47,7 @@ class CardValidator extends Validator
     const SWITCH_CARD = 'Switch Card';
     const LASER = 'Laser';
     const UNIONPAY = 'Union Pay';
+    const MIR = 'mir';
 
     /**
      * @var array holds the configurations for each of the credit / debit cards including the card lengths and regex
@@ -150,6 +151,11 @@ class CardValidator extends Validator
             'cvvLength' => [3],
             'luhn' => false,
         ],
+        self::MIR => [
+            'pattern' => '/^220[0-4][0-9]{12}$/',
+            'cvvLength' => [3],
+            'luhn' => true,
+        ]
     ];
 
     /**
