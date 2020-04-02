@@ -60,7 +60,7 @@ class CardValidator extends Validator
             'luhn' => true,
         ],
         self::MAESTRO => [
-            'pattern' => '/^(5018|5020|5038|6304|6759|6761|6763)[0-9]{8,15}$/',
+            'pattern' => ' /^(5[06-9]|6[37])\d*$/',
             'cvvLength' => [3],
             'luhn' => true,
         ],
